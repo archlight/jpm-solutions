@@ -15,13 +15,12 @@ def solution(num: int, include_leading_zeros=False):
             if window_len > max_len:
                 max_len = window_len
                 result = i + 1
+            j += 1
         else:
             i = j
-        j += 1
+            # if j-th bit is 1, it will reset the moving window
+            # to be evaluated in the next iteration
+            if bits[j] == "0":
+                j += 1        
 
-    """
-    this edge case only occurs with leading zeros and num=1
-    """
-    if bits[i] == "1" and len(bits)-i > max_len:
-        result = i + 1
     return result

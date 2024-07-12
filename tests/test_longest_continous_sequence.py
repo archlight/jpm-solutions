@@ -18,7 +18,7 @@ class TestSolution:
 
     @pytest.mark.parametrize(
     "binary_str, expected", 
-    [("00000001", 8), ("00000011", 7), ("00110001", 3)]
+    [("00000001", 8), ("00010000", 4), ("00000011", 7), ("00110001", 3)]
     )
     def test_binary_string_with_leading_zeros(self, binary_str, expected):
         num = int(binary_str, 2)
